@@ -1,2 +1,2 @@
-# GopherRateMyProfessor
-Adds Professor Ratings from Rate My Professor to UMN Schedule Builder
+# GopherProfessorRatings
+Adds Professor Ratings to University of Minnesota Schedule Builder

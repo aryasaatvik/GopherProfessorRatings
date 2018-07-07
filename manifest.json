@@ -1,9 +1,9 @@
 {
-    "name": "Gopher Rate My Professor",
+    "name": "Gopher Professor Ratings",
     "author": "Saatvik Arya",
     "version": "1.0",
     "manifest_version": 2,
-    "description": "Adds Professor Ratings from Rate My Professor to UMN Schedule Builder",
+    "description": "Adds Professor Ratings to University of Minnesota Schedule Builder",
     "background": {
         "scripts": ["background.js"]
     },
@@ -19,7 +19,7 @@
     },
     "permissions": ["webRequest", "https://schedulebuilder.umn.edu/*", "https://search-a.akamaihd.net/typeahead/suggest/*"],
     "browser_action": {
-        "default_title": "Gopher Rate My Professor",
+        "default_title": "Gopher Professor Ratings",
         "default_icon": "images/goldy48.png"
     }
 }
