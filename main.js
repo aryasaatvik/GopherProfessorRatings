@@ -9,9 +9,9 @@ function logProfessors() {
     var lectures = document.querySelectorAll("#crse-sections > div > div")
     lectures.forEach(function (lecture) {
         var professor = lecture.querySelector("div > div.panel-body > table > tbody > tr > td:nth-child(4) > a")
-        var table = professor.parentNode.parentNode.parentNode.parentNode
         if (professor) {
             console.log(professor.innerText)
+            var table = professor.parentNode.parentNode.parentNode.parentNode
             getRating(professor.innerText, table)
         }
     })

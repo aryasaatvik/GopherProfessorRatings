@@ -12,8 +12,14 @@
         "js": ["main.js"],
         "css": ["styles.css"]
     }],
+    "icons": {
+        "16": "images/goldy16.png",
+        "48": "images/goldy48.png",
+        "128": "images/goldy128.png"
+    },
     "permissions": ["webRequest", "https://schedulebuilder.umn.edu/*", "https://search-a.akamaihd.net/typeahead/suggest/*"],
     "browser_action": {
-        "default_title": "Gopher Rate My Professor"
+        "default_title": "Gopher Rate My Professor",
+        "default_icon": "images/goldy48.png"
     }
 }
