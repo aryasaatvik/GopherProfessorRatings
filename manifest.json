@@ -1,7 +1,7 @@
 {
     "name": "Gopher Professor Ratings",
     "author": "Saatvik Arya",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 2,
     "description": "Adds Professor Ratings to University of Minnesota Schedule Builder",
     "background": {
