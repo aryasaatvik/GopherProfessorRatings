@@ -1,16 +1,14 @@
 chrome.runtime.onMessage.addListener(function (request) {
     if (request.refreshCoursePage) {
-        console.log("REFESH COURSE PAGE")
-        logProfessors()
+        getLectures()
     }
 })
 
-function logProfessors() {
+function getLectures() {
     var lectures = document.querySelectorAll("#crse-sections > div > div")
     lectures.forEach(function (lecture) {
         var professor = lecture.querySelector("div > div.panel-body > table > tbody > tr > td:nth-child(4) > a")
         if (professor) {
-            console.log(professor.innerText)
             var table = professor.parentNode.parentNode.parentNode.parentNode
             getRating(professor.innerText, table)
         }
@@ -20,7 +18,6 @@ function logProfessors() {
 function getRating(professor, table) {
     professor = professor.split(" ")
     const professorRatings = "https://search-a.akamaihd.net/typeahead/suggest/?solrformat=true&rows=1&q=" + professor[0] + "+" + professor[professor.length - 1] + "+AND+schoolid_s%3A1257&defType=edismax&qf=teacherfirstname_t%5E2000+teacherlastname_t%5E2000+teacherfullname_t%5E2000+autosuggest&bf=pow(total_number_of_ratings_i%2C2.1)&sort=total_number_of_ratings_i+desc&siteName=rmp&rows=20&start=0&fl=pk_id+teacherfirstname_t+teacherlastname_t+total_number_of_ratings_i+averageratingscore_rf+schoolid_s+averageeasyscore_rf&fq="
-    console.log(professorRatings)
 
     var professorStats
     var request = new XMLHttpRequest()
@@ -30,7 +27,6 @@ function getRating(professor, table) {
             var data = JSON.parse(request.responseText)
             professorStats = data.response.docs[0]
             if (professorStats) {
-                console.log(professorStats)
                 insertRatings(professorStats, table)
             }
         }
